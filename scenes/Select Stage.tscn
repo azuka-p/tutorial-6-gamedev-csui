@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Fonts/dynamicfont2.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/Select Stage.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -258.0
+margin_top = -40.0
+margin_right = 258.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 80 )
+custom_constants/separation = 100
+alignment = 1
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+margin_right = 200.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 1 )
+text = "Level 1"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+margin_left = 300.0
+margin_right = 516.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 1 )
+text = "Level 2"
+
+[node name="Back" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.5
+margin_top = 153.0
+margin_right = 111.5
+margin_bottom = 24.5
+rect_min_size = Vector2( 0, 80 )
+custom_fonts/font = ExtResource( 1 )
+text = "Kembali"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
